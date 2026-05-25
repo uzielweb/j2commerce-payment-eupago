@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="j2commerce" method="upgrade">
+	<name>plg_j2commerce_payment_eupago</name>
+	<author>J2Commerce</author>
+	<creationDate>May 2026</creationDate>
+	<copyright>(C) 2026 J2Commerce</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>support@j2commerce.com</authorEmail>
+	<authorUrl>www.j2commerce.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_J2COMMERCE_PAYMENT_EUPAGO_XML_DESCRIPTION</description>
+	<namespace path="src">J2Commerce\Plugin\J2Commerce\PaymentEupago</namespace>
+	<files>
+		<filename plugin="payment_eupago">payment_eupago.xml</filename>
+		<folder>services</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_j2commerce_payment_eupago.ini</language>
+		<language tag="pt-BR">language/pt-BR/pt-BR.plg_j2commerce_payment_eupago.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="display_name" type="text" label="PLG_J2COMMERCE_PAYMENT_EUPAGO_DISPLAY_NAME_LABEL" description="PLG_J2COMMERCE_PAYMENT_EUPAGO_DISPLAY_NAME_DESC" default="EuPago Multibanco" required="true" />
+				
+				<field name="api_key" type="text" label="PLG_J2COMMERCE_PAYMENT_EUPAGO_API_KEY_LABEL" description="PLG_J2COMMERCE_PAYMENT_EUPAGO_API_KEY_DESC" required="true" />
+				
+				<field name="entity" type="text" label="PLG_J2COMMERCE_PAYMENT_EUPAGO_ENTITY_LABEL" description="PLG_J2COMMERCE_PAYMENT_EUPAGO_ENTITY_DESC" default="11249" required="true" />
+				
+				<field name="sandbox" type="radio" label="PLG_J2COMMERCE_PAYMENT_EUPAGO_SANDBOX_LABEL" description="PLG_J2COMMERCE_PAYMENT_EUPAGO_SANDBOX_DESC" default="0" class="switcher">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="payment_status"
+					type="OrderStatus"
+					label="PLG_J2COMMERCE_PAYMENT_EUPAGO_PAYMENT_STATUS_LABEL"
+					description="PLG_J2COMMERCE_PAYMENT_EUPAGO_PAYMENT_STATUS_DESC"
+					default="4"
+					addfieldprefix="J2Commerce\Component\J2commerce\Administrator\Field"
+					layout="joomla.form.field.list-fancy-select"
+				/>
+				
+				<field name="onbeforepayment" type="editor" label="PLG_J2COMMERCE_PAYMENT_EUPAGO_ONBEFOREPAYMENT_LABEL" description="PLG_J2COMMERCE_PAYMENT_EUPAGO_ONBEFOREPAYMENT_DESC" buttons="false" filter="JComponentHelper::filterText" />
+				<field name="onafterpayment" type="editor" label="PLG_J2COMMERCE_PAYMENT_EUPAGO_ONAFTERPAYMENT_LABEL" description="PLG_J2COMMERCE_PAYMENT_EUPAGO_ONAFTERPAYMENT_DESC" buttons="false" filter="JComponentHelper::filterText" />
+				<field name="onerrorpayment" type="editor" label="PLG_J2COMMERCE_PAYMENT_EUPAGO_ONERRORPAYMENT_LABEL" description="PLG_J2COMMERCE_PAYMENT_EUPAGO_ONERRORPAYMENT_DESC" buttons="false" filter="JComponentHelper::filterText" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>
