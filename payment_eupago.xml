@@ -10,6 +10,11 @@
 	<version>1.0.0</version>
 	<description>PLG_J2COMMERCE_PAYMENT_EUPAGO_XML_DESCRIPTION</description>
 	<namespace path="src">J2Commerce\Plugin\J2Commerce\PaymentEupago</namespace>
+
+	<updateservers>
+		<server type="extension" priority="1" name="J2Commerce Eupago Updates">https://raw.githubusercontent.com/uzielweb/j2commerce-payment-eupago/master/updates.xml</server>
+	</updateservers>
+
 	<files>
 		<filename plugin="payment_eupago">payment_eupago.xml</filename>
 		<folder>services</folder>
